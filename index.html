@@ -4,10 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart Medicine Tracker</title>
-
 <link rel="stylesheet" href="style.css">
 <link rel="manifest" href="manifest.json">
-
 </head>
 <body>
 
@@ -15,88 +13,84 @@
 <h1>💊 Smart Medicine Tracker</h1>
 </header>
 
-<nav>
-<button onclick="showPage('home')">Home</button>
-<button onclick="showPage('login')">Login</button>
-<button onclick="showPage('signup')">Signup</button>
-<button onclick="showPage('dashboard')">Dashboard</button>
-<button onclick="showPage('add')">Add</button>
-<button onclick="showPage('reminder')">Reminder</button>
-<button onclick="showPage('history')">History</button>
-<button onclick="showPage('appointment')">Appointment</button>
-<button onclick="showPage('overdose')">Overdose</button>
-<button onclick="showPage('profile')">Profile</button>
-<button onclick="showPage('help')">Help</button>
-<button onclick="logout()">Logout</button>
-</nav>
-
+<!-- 1 Home -->
 <section id="home" class="page">
 <h2>Welcome</h2>
-<p>Track medicines and appointments safely.</p>
+<button onclick="goTo('login')">Login</button>
+<button onclick="goTo('signup')">Signup</button>
 </section>
 
+<!-- 2 Login -->
 <section id="login" class="page">
 <h2>Login</h2>
 <input id="loginUser" placeholder="Username">
 <input id="loginPass" type="password" placeholder="Password">
 <button onclick="login()">Login</button>
+<button onclick="goTo('home')">Back</button>
 </section>
 
+<!-- 3 Signup -->
 <section id="signup" class="page">
 <h2>Signup</h2>
 <input id="signupUser" placeholder="Username">
 <input id="signupPass" type="password" placeholder="Password">
 <button onclick="signup()">Signup</button>
+<button onclick="goTo('home')">Back</button>
 </section>
 
+<!-- 4 Dashboard -->
 <section id="dashboard" class="page">
-<h2>Today's Medicines</h2>
+<h2>Dashboard</h2>
+<button onclick="goTo('add')">Add Medicine</button>
+<button onclick="goTo('history')">History</button>
+<button onclick="goTo('appointment')">Appointment</button>
+<button onclick="goTo('profile')">Profile</button>
+<button onclick="logout()">Logout</button>
 <ul id="todayList"></ul>
 </section>
 
+<!-- 5 Add Medicine -->
 <section id="add" class="page">
 <h2>Add Medicine</h2>
 <input id="medName" placeholder="Medicine Name">
-<input id="medDose" type="number" placeholder="Dosage mg">
+<input id="medDose" type="number" placeholder="Dosage">
 <input id="medTime" type="time">
 <button onclick="addMedicine()">Save</button>
+<button onclick="goTo('dashboard')">Back</button>
 </section>
 
-<section id="reminder" class="page">
-<h2>Enable Notifications</h2>
-<button onclick="enableNotifications()">Allow Notifications</button>
-</section>
-
+<!-- 6 History -->
 <section id="history" class="page">
 <h2>History</h2>
 <ul id="historyList"></ul>
+<button onclick="goTo('dashboard')">Back</button>
 </section>
 
+<!-- 7 Appointment -->
 <section id="appointment" class="page">
-<h2>Add Appointment</h2>
+<h2>Appointment</h2>
 <input id="docName" placeholder="Doctor Name">
 <input id="appDate" type="datetime-local">
 <button onclick="addAppointment()">Save</button>
 <ul id="appointmentList"></ul>
+<button onclick="goTo('dashboard')">Back</button>
 </section>
 
-<section id="overdose" class="page">
-<h2>Overdose Warning</h2>
-<p id="overdoseMsg"></p>
-</section>
-
+<!-- 8 Profile -->
 <section id="profile" class="page">
 <h2>Profile</h2>
 <input id="profileName" placeholder="Your Name">
 <button onclick="saveProfile()">Save</button>
+<button onclick="goTo('dashboard')">Back</button>
 </section>
 
-<section id="help" class="page">
-<h2>Help & Support</h2>
-<p>Contact: support@medtracker.com</p>
+<!-- 9 Overdose -->
+<section id="overdose" class="page">
+<h2>⚠ Overdose Warning</h2>
+<p id="overdoseMsg"></p>
+<button onclick="goTo('dashboard')">Back</button>
 </section>
 
 <script src="app.js"></script>
-
 </body>
 </html>
