@@ -1,0 +1,21 @@
+function addMedicine(){
+
+let name = medName.value;
+let dose = medDose.value;
+let time = medTime.value;
+
+if(!name || !dose || !time){
+alert("Fill all fields");
+return;
+}
+
+medicines.push({name,dose,time});
+localStorage.setItem("medicines",JSON.stringify(medicines));
+
+displayMedicines();
+
+// IMPORTANT: pass dose also
+scheduleReminder(name, dose, time);
+
+alert("Medicine Saved");
+}
