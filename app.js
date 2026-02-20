@@ -35,3 +35,19 @@ audio.play();
 
 }
 }
+
+navigator.serviceWorker.addEventListener("message", function(event){
+
+if(event.data.type === "SAVE_RECORD"){
+
+let history = JSON.parse(localStorage.getItem("history")) || [];
+
+history.push(event.data.data);
+
+localStorage.setItem("history", JSON.stringify(history));
+
+displayHistory();
+
+}
+
+});
