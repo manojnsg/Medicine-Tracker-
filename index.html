@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Medicine Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+
+<header>
+<h1>💊 Smart Medicine Tracker</h1>
+</header>
+
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('login')">Login</button>
+<button onclick="showPage('signup')">Signup</button>
+<button onclick="showPage('dashboard')">Dashboard</button>
+<button onclick="showPage('add')">Add</button>
+<button onclick="showPage('reminder')">Reminder</button>
+<button onclick="showPage('history')">History</button>
+<button onclick="showPage('appointment')">Appointment</button>
+<button onclick="showPage('overdose')">Overdose</button>
+<button onclick="showPage('profile')">Profile</button>
+<button onclick="showPage('help')">Help</button>
+<button onclick="logout()">Logout</button>
+</nav>
+
+<section id="home" class="page">
+<h2>Welcome</h2>
+<p>Track medicines and appointments safely.</p>
+</section>
+
+<section id="login" class="page">
+<h2>Login</h2>
+<input id="loginUser" placeholder="Username">
+<input id="loginPass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+</section>
+
+<section id="signup" class="page">
+<h2>Signup</h2>
+<input id="signupUser" placeholder="Username">
+<input id="signupPass" type="password" placeholder="Password">
+<button onclick="signup()">Signup</button>
+</section>
+
+<section id="dashboard" class="page">
+<h2>Today's Medicines</h2>
+<ul id="todayList"></ul>
+</section>
+
+<section id="add" class="page">
+<h2>Add Medicine</h2>
+<input id="medName" placeholder="Medicine Name">
+<input id="medDose" type="number" placeholder="Dosage mg">
+<input id="medTime" type="time">
+<button onclick="addMedicine()">Save</button>
+</section>
+
+<section id="reminder" class="page">
+<h2>Enable Notifications</h2>
+<button onclick="enableNotifications()">Allow Notifications</button>
+</section>
+
+<section id="history" class="page">
+<h2>History</h2>
+<ul id="historyList"></ul>
+</section>
+
+<section id="appointment" class="page">
+<h2>Add Appointment</h2>
+<input id="docName" placeholder="Doctor Name">
+<input id="appDate" type="datetime-local">
+<button onclick="addAppointment()">Save</button>
+<ul id="appointmentList"></ul>
+</section>
+
+<section id="overdose" class="page">
+<h2>Overdose Warning</h2>
+<p id="overdoseMsg"></p>
+</section>
+
+<section id="profile" class="page">
+<h2>Profile</h2>
+<input id="profileName" placeholder="Your Name">
+<button onclick="saveProfile()">Save</button>
+</section>
+
+<section id="help" class="page">
+<h2>Help & Support</h2>
+<p>Contact: support@medtracker.com</p>
+</section>
+
+<script src="app.js"></script>
+
+</body>
+</html>
