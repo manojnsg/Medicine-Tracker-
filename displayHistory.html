@@ -1,0 +1,11 @@
+function displayHistory(){
+
+let history = JSON.parse(localStorage.getItem("history")) || [];
+
+historyList.innerHTML = "";
+
+history.forEach(h=>{
+historyList.innerHTML += `<li>${h}</li>`;
+});
+
+}
